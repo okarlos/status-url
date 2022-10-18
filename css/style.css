@@ -60,9 +60,13 @@ body {
     align-items: center;
 }
 
-.url {
+.url, .canceled {
     list-style: none;
     margin: 5px 0;
+
+}
+
+.url {
     color:#FFFFFF;
 }
 
@@ -85,4 +89,12 @@ body {
 
 .erro::before {
     content: "❌ ";
+}
+
+.canceled {
+    color:#555555;
+}
+
+.canceled::before {
+    content: "💀 ";
 }
