@@ -6,7 +6,6 @@ buttonTest.addEventListener("click", () => {
 
     for (let i = 0; i < lista.length; i++) {
         const status = conectaURL(lista[i].innerHTML + '/help',i);
-        const pinta = document.querySelector(`[contador="${i}"]`);
     }
 
 })
@@ -17,7 +16,7 @@ buttonClear.addEventListener("click", () => {
         lista[i].classList.remove("ok");
         lista[i].classList.remove("erro");
     }
-    
+
 })
 
 function conectaURL(URL, i) {
