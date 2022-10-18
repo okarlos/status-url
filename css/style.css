@@ -74,6 +74,14 @@ body {
     content: "➡️ ";
 }
 
+.canceled {
+    color:#706f6f;
+}
+
+.canceled::before {
+    content: "💀 ";
+}
+
 .ok {
     color: #32de84;
     list-style: none;
@@ -89,12 +97,4 @@ body {
 
 .erro::before {
     content: "❌ ";
-}
-
-.canceled {
-    color:#555555;
-}
-
-.canceled::before {
-    content: "💀 ";
 }
