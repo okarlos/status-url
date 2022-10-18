@@ -15,6 +15,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    flex: 1;
 }
 
 .button {
@@ -57,7 +58,16 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    flex: 3;
+    flex-wrap: nowrap;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 500px;
+    align-content: center;
 }
 
 .url, .canceled {
