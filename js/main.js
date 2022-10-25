@@ -28,7 +28,7 @@ function conectaURL(URL, i) {
     xhr.addEventListener("load", function() {
         console.log(URL +" - "+ xhr.status) 
 
-        if (xhr.status === 200) {
+        if (xhr.status == 200) {
             lista[i].classList.add("ok")
         }else {
             lista[i].classList.add("erro")
