@@ -5,9 +5,8 @@ const lista = document.querySelectorAll(".url");
 buttonTest.addEventListener("click", () => {
 
     for (let i = 0; i < lista.length; i++) {
-        const status = conectaURL(lista[i].innerHTML + '/help',i);
+        conectaURL(lista[i].innerHTML + '/help',i);
     }
-
 })
 
 buttonClear.addEventListener("click", () => {
@@ -16,25 +15,29 @@ buttonClear.addEventListener("click", () => {
         lista[i].classList.remove("ok");
         lista[i].classList.remove("erro");
     }
-
 })
 
-function conectaURL(URL, i) {
+// refatorado o teste de conexão da URL, utilizando fetch
+function conectaURL (URL, i) {
 
-    let xhr = new XMLHttpRequest();
-
-    xhr.open("GET", URL);
-
-    xhr.addEventListener("load", function() {
-        console.log(URL +" - "+ xhr.status) 
-
-        if (xhr.status === 200) {
-            lista[i].classList.add("ok")
-        }else {
-            lista[i].classList.add("erro")
-        }
-
-    })
-
-    xhr.send();
+    fetch(URL)
+    .then(response => {
+        console.log(URL, response.status),
+        lista[i].classList.add("ok") })
+    .catch(erro => {
+        console.log(URL, 'falhou'),
+        lista[i].classList.add("erro")})
 }
+
+// primeira tentativa de teste da URL, não conseguia pegar os erros
+// function conectaURL(URL, i) {
+//     let xhr = new XMLHttpRequest();
+//     xhr.open("GET", URL);
+//     xhr.addEventListener("load", () => {
+//         console.log(URL +" - "+ xhr.status) 
+//         if (xhr.status === 200) {
+//             lista[i].classList.add("ok")
+//         }
+//     })
+//     xhr.send();
+// }
