@@ -2,6 +2,8 @@ const buttonTest = document.getElementById("testar");
 const buttonClear = document.getElementById("limpar")
 const lista = document.querySelectorAll(".url");
 
+
+//botão de testar conexão
 buttonTest.addEventListener("click", () => {
 
     for (let i = 0; i < lista.length; i++) {
@@ -9,6 +11,8 @@ buttonTest.addEventListener("click", () => {
     }
 })
 
+
+//botão de limpar
 buttonClear.addEventListener("click", () => {
 
     for (let i = 0; i < lista.length; i++) {
@@ -17,7 +21,8 @@ buttonClear.addEventListener("click", () => {
     }
 })
 
-// refatorado o teste de conexão da URL, utilizando fetch
+
+//teste de conexão da URL, utilizando fetch
 function conectaURL (URL, i) {
 
     fetch(URL)
